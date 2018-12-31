@@ -18,4 +18,4 @@ before_install:
 - curl -L https://goss.rocks/install | sudo sh
 
 script:
-- ./test_all.sh
+- bash test_all.sh
