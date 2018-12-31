@@ -1,0 +1,21 @@
+---
+sudo: required
+language: python
+python:
+  - "3.6"
+
+dist: trusty
+
+services:
+- docker
+
+before_install:
+# install goss
+- sudo apt-get -qq update
+- virtualenv --python=$(which python3.6) envgoss
+- source envmolecule/bin/activate
+- pip install -r requirements.txt
+- curl -L https://goss.rocks/install | sudo sh
+
+script:
+- ./test_all.sh
