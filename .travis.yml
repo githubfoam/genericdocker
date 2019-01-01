@@ -21,6 +21,6 @@ before_install:
 install:
 - bash bootstrap.sh
 script:
-- make teardown
+# - make teardown
 - docker image ls
 - docker container ls -a
