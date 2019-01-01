@@ -6,13 +6,13 @@ branches:
 language: python
 python:
   - "2.7"
-  - "3.6"
+  # - "3.6"
 env:
   matrix:
         - TOX_ENV=py27
-        - TOX_ENV=py34
-        - TOX_ENV=pypy
-        - TOX_ENV=jython
+        # - TOX_ENV=py34
+        # - TOX_ENV=pypy
+        # - TOX_ENV=jython
 # launch two jobs and execute the tests for each environment in parallel
 # matrix:
 #     include:
@@ -61,3 +61,4 @@ script:
 - make build
 - docker image ls
 - docker container ls -a
+- make run
