@@ -20,5 +20,7 @@ install:
 - bash bootstrap.sh
 script:
 - make build
-- make run
+- docker image ls
+- docker container ls -a
+# - make run
 # - sudo make teardown
