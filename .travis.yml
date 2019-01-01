@@ -43,8 +43,8 @@ install:
 # This works for pypy Source: flask-mongoengine's .travis.yml.
 # - tox -e $(echo py$TRAVIS_PYTHON_VERSION | tr -d . | sed -e 's/pypypy/pypy/')
 script:
-# - tox -e $TOXENV
-- tox
+- tox -e $TOXENV
+# - tox
 - make build
 - docker image ls
 - docker container ls -a
