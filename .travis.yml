@@ -4,7 +4,7 @@ language: python
 python:
   - "3.6"
 
-dist: trusty
+dist: bionic
 
 services:
 - docker
@@ -12,8 +12,8 @@ services:
 before_install:
 # install goss
 - sudo apt-get -qq update
-- virtualenv --python=$(which python3.6) envgoss
-- source envgoss/bin/activate
+# - virtualenv --python=$(which python3.6) envgoss
+# - source envgoss/bin/activate
 - pip install -r requirements.txt
 - curl -L https://goss.rocks/install | sudo sh
 install:
