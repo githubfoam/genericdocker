@@ -61,4 +61,4 @@ script:
 - make build
 - docker image ls
 - docker container ls -a
-- make run
+# - make run
