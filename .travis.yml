@@ -20,5 +20,5 @@ install:
 - bash bootstrap.sh
 script:
 - make build
-# - sudo make run
+- make run
 # - sudo make teardown
