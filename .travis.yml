@@ -16,6 +16,9 @@ before_install:
 - source envgoss/bin/activate
 - pip install -r requirements.txt
 - curl -L https://goss.rocks/install | sudo sh
-
+install:
+- bash bootstrap.sh
 script:
-- bash test_all.sh
+- sudo make build
+- sudo make run
+- sudo make teardown
