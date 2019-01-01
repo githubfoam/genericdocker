@@ -5,8 +5,8 @@ branches:
     - dev
 language: python
 python:
-  - "3.6"
   - "2.7"
+  - "3.6"
 dist: bionic
 services:
 - docker
@@ -28,7 +28,9 @@ install:
 # Travis provides the python version for each test as TRAVIS_PYTHON_VERSION,
 # but in the form '3.4', while tox expects 'py34'
 # If you don't want to rely on an external lib (tox-travis) to do the translation, you can do that manually
-- tox -e $(echo py$TRAVIS_PYTHON_VERSION | tr -d .)
+# - tox -e $(echo py$TRAVIS_PYTHON_VERSION | tr -d .)
+# This works for pypy Source: flask-mongoengine's .travis.yml.
+# - tox -e $(echo py$TRAVIS_PYTHON_VERSION | tr -d . | sed -e 's/pypypy/pypy/')
 script:
 - make build
 - docker image ls
