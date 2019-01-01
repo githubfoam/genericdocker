@@ -6,6 +6,7 @@ branches:
 language: python
 python:
   - "3.6"
+  - "2.7"
 dist: bionic
 services:
 - docker
@@ -17,15 +18,14 @@ before_cache:
 before_install:
 # install goss
 - sudo apt-get -qq update
-- virtualenv --python=$(which python3.6) envgoss
-- source envgoss/bin/activate
+# - virtualenv --python=$(which python3.6) envgoss
+# - source envgoss/bin/activate
 - pip install -r requirements.txt
 - curl -L https://goss.rocks/install | sudo sh
-- make build
-# - sudo make run
 install:
 - bash bootstrap.sh
+- pip install tox
 script:
-# - make teardown
+- make build
 - docker image ls
 - docker container ls -a
