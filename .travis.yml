@@ -16,11 +16,11 @@ before_install:
 - source envgoss/bin/activate
 - pip install -r requirements.txt
 - curl -L https://goss.rocks/install | sudo sh
+- make build
+- sudo make run
 install:
 - bash bootstrap.sh
 script:
-- make build
+- make teardown
 - docker image ls
 - docker container ls -a
-- sudo make run
-# - sudo make teardown
