@@ -25,6 +25,7 @@ before_install:
 install:
 - bash bootstrap.sh
 - pip install tox
+- tox -e $(echo py$TRAVIS_PYTHON_VERSION | tr -d .)
 script:
 - make build
 - docker image ls
