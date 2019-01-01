@@ -3,12 +3,14 @@ sudo: required
 language: python
 python:
   - "3.6"
-
 dist: bionic
-
 services:
 - docker
-
+cache:
+  directories:
+    - $HOME/.cache/pip
+before_cache:
+- rm -f $HOME/.cache/pip/log/debug.log
 before_install:
 # install goss
 - sudo apt-get -qq update
