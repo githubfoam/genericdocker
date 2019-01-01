@@ -19,6 +19,6 @@ before_install:
 install:
 - bash bootstrap.sh
 script:
-- sudo make build
+- make build
 # - sudo make run
 # - sudo make teardown
