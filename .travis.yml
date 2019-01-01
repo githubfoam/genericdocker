@@ -13,10 +13,11 @@ matrix:
       - python: 2.7
         # env: TOX_ENV=py27
         env:
-        - TOX_ENV=py27
-        - TOX_ENV=py34
-        # - TOX_ENV=py35
-        # - TOX_ENV=py36
+          matrix:
+          - TOX_ENV=py27
+          - TOX_ENV=py34
+          # - TOX_ENV=py35
+          # - TOX_ENV=py36
       - python: 3.6
         env: TOX_ENV=py36
 dist: bionic
@@ -49,7 +50,7 @@ install:
 # - tox -e $(echo py$TRAVIS_PYTHON_VERSION | tr -d . | sed -e 's/pypypy/pypy/')
 script:
 # - tox -e $TOXENV
-- tox
+# - tox
 - make build
 - docker image ls
 - docker container ls -a
