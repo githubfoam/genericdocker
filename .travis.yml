@@ -22,5 +22,5 @@ script:
 - make build
 - docker image ls
 - docker container ls -a
-# - make run
+- sudo make run
 # - sudo make teardown
