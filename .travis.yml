@@ -27,11 +27,15 @@ before_install:
 - sudo apt-get -qq update
 # - virtualenv --python=$(which python3.6) envgoss
 # - source envgoss/bin/activate
+install:
 - pip install -r requirements.txt
 - curl -L https://goss.rocks/install | sudo sh
-install:
+- goss --version
+- docker version
+- hostnamectl
 - bash bootstrap.sh
-- pip install tox
+# - pip install tox
+- tox --version
 # Travis provides the python version for each test as TRAVIS_PYTHON_VERSION,
 # but in the form '3.4', while tox expects 'py34'
 # If you don't want to rely on an external lib (tox-travis) to do the translation, you can do that manually
@@ -39,7 +43,8 @@ install:
 # This works for pypy Source: flask-mongoengine's .travis.yml.
 # - tox -e $(echo py$TRAVIS_PYTHON_VERSION | tr -d . | sed -e 's/pypypy/pypy/')
 script:
-- tox -e $TOXENV
+# - tox -e $TOXENV
+- tox
 - make build
 - docker image ls
 - docker container ls -a
