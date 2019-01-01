@@ -1,6 +1,6 @@
-.PHONY: clean
-clean:
-        rm *.o temp
+# .PHONY: clean
+# clean:
+#         rm *.o temp
 build:
 	docker build -t docker-example .
 
