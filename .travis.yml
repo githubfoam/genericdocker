@@ -23,10 +23,7 @@ cache:
 before_cache:
 - rm -f $HOME/.cache/pip/log/debug.log
 before_install:
-# install goss
 - sudo apt-get -qq update
-# - virtualenv --python=$(which python3.6) envgoss
-# - source envgoss/bin/activate
 install:
 - pip install -r requirements.txt
 - curl -L https://goss.rocks/install | sudo sh
