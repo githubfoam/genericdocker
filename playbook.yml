@@ -19,9 +19,10 @@
     #   template: src=systemd.j2 dest=/etc/systemd/system/docker-{{ name }}.service
     # - name: reload systemd daemon
     #   command: systemctl daemon-reload
-    - name: Start & Enable docker-{{ name }} service
+    - name: Start & Enable {{ name }} service
       service:
-        name: docker-{{ name }}
+        # name: docker-{{ name }}
+        name: {{ name }}
         state: started
         enabled: yes
     - name: check container status
