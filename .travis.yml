@@ -42,6 +42,7 @@ install:
 script:
 # - tox -e $TOXENV
 # - tox
+- ansinble-playbook playbook.yml
 - make build
 - docker image ls
 - docker container ls -a
