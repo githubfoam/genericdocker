@@ -1,5 +1,5 @@
 image: centos:latest
-name: testimage
+name: docker-example
 src_port: 8081
 dest_port: 80
 src_vol: /mnt/www

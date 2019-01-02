@@ -42,8 +42,8 @@ install:
 script:
 # - tox -e $TOXENV
 # - tox
-- ansible-playbook playbook.yml
 - make build
 - docker image ls
 - docker container ls -a
+- ansible-playbook playbook.yml
 # - make run
