@@ -2,8 +2,9 @@
 =========
 
 
-Travis (.com)master branch:
-[![](https://img.shields.io/travis/com/githubfoam/genericdocker/master.svg?style=plastic)](https://travis-ci.com/githubfoam/genericdocker)
+
+ [![Build Status](https://travis-ci.com/githubfoam/genericdocker.svg?branch=master)](https://travis-ci.com/githubfoam/travisci-line)
+
 
 
 ----------------
